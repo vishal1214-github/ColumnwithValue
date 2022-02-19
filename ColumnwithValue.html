@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Charts tutorial Tutorial - Wikitechy</title>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {packages: ['corechart']});     
+   </script>
+</head>
+<body>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+   // Define the chart to be drawn.
+   var data = google.visualization.arrayToDataTable([
+      ['Year', 'Sales', { role: 'annotation'} ,'Purchase', { role: 'annotation'}],
+	  ['2013',  800,'800',      590, '590'],
+      ['2014',  900,'900',      600,'600'],
+      ['2015',  1070,'1070',      740,'740'],
+      ['2016',  1150,'1150',       880,'880'],
+      ['2017',  1430,'1430',      940,'940']
+      ]);
+
+   var options = {
+      title: 'Sales and Purchase Comparsion'      
+   };  
+
+   // Instantiate and draw the chart.
+   var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+   chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+</script>
+</body>
+</html>
